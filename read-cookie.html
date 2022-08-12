@@ -1,0 +1,15 @@
+<body>
+  <script>
+    (function () {
+      try {
+        if (!window.parent) return;
+        var msg = /s=1/.test(document.cookie)
+          ? "3pcSupported"
+          : "3pcUnsupported";
+        window.parent.postMessage(msg, "*");
+      } catch (e) {
+        console.error("Cookie check ignored");
+      }
+    })();
+  </script>
+</body>
